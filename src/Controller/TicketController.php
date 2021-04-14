@@ -42,7 +42,7 @@ class TicketController extends AbstractController
     {
         if ($this->ticketManager->rejectReservedPlace($request->getTicketId(), $request->getCustomerId())) {
             return $this->json([
-                'message' => 'Reserved!'
+                'message' => 'Rejected!'
             ]);
         }
 
