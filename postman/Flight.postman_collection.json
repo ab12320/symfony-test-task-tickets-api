@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "c538d059-56f9-4095-ad4b-dba735e4204a",
+		"name": "Flight",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Reserve place",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/reserve-place?customerId=1&ticketId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reserve-place"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						},
+						{
+							"key": "ticketId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Reserve place on flight."
+			},
+			"response": []
+		},
+		{
+			"name": "Reject reserve place",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/api/reject-reserved-place?customerId=1&ticketId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"reject-reserved-place"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						},
+						{
+							"key": "ticketId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buy ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/buy-ticket?customerId=1&ticketId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"buy-ticket"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						},
+						{
+							"key": "ticketId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refund ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/refund-ticket?customerId=1&ticketId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"refund-ticket"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						},
+						{
+							"key": "ticketId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Callback (sale complete)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"data\":{\"flight_id\":1,\"triggered_at\":1585012345,\"event\":\"flight_ticket_sales_completed\",\"secret_key\":\"a1b2c3d4e5f6a1b2c3d4e5f6\"}}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/callback/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"callback",
+						"events"
+					],
+					"query": [
+						{
+							"key": "data",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Callback (flight cancelled)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"data\":{\"flight_id\":1,\"triggered_at\":1585012345,\"event\":\"flight_cancelled\",\"secret_key\":\"a1b2c3d4e5f6a1b2c3d4e5f6\"}}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/callback/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"callback",
+						"events"
+					],
+					"query": [
+						{
+							"key": "data",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
